@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+:root{
+    --ecuro: #011826;
+    --medio: #012840;
+    --claro: #025373;
+    --claro2:#025E73;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color:#011826;
+}
+.menu{
+    background-color: #011a29;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    color: white;
+    padding: 20px;
+}
+.menu:hover{
+    box-shadow: 0px 5px 10px #025373;
+
+}
+
+li:hover{
+    text-decoration: underline;
+    
+}
+
+.foto{
+    
+    background-color: #025E73;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 50%;
+    background-image: url(imagens/minha\ imagem.jpg);
+    background-position:  center;
+    
+}
+.foto:hover{
+    box-shadow: 0px 1px 30px #025373;
+    animation-duration: 600ms;
+}
+
+h1{
+    text-align: center;
+    padding: 30px;
+    font-size: 50px;
+    color: white;
+}
+
+P{
+    text-align: center;
+    background-color: rgba(83, 83, 83, 0.103);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    
+    
+}
+
