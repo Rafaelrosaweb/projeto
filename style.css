@@ -23,11 +23,11 @@ body{
     background-color: #011a2986;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     list-style: none;
     padding: 20px;
-    color: white;
     backdrop-filter: blur(10px);
+
     
     
     
@@ -36,18 +36,18 @@ body{
 a{
     text-decoration: none;
 }
-
-
-.lista {
-    
-    color: white;
-    list-style: none;
-    
-    
-    
+.fa-solid {
+    color: #ffffff;
+    margin-right: 3em;
 }
+.fa-solid:hover{
+   
+}
+
+
 .menu:hover{
     box-shadow: 0px 5px 10px #025373;
+    
 
 }
 
@@ -59,7 +59,8 @@ a{
     width: 300px;
     height: 300px;
     margin: auto;
-    margin-top: 150px;
+
+    margin-top: 100px;
     border-radius:  50%;
     background-image: url(imagens/minha\ imagem.jpg);
     background-position:  center;
@@ -68,7 +69,7 @@ a{
 }
 .foto:hover{
     box-shadow: 0px 1px 30px #025373;
-    animation-duration: 600ms;
+    
 }
 
 
@@ -91,10 +92,11 @@ h2{
 
    }
    .sobre{
-   padding: 50px;
+   padding: 40px;
    display: flex;
    justify-content: center;
    text-indent: 30px;
+   
    
  
    
@@ -120,7 +122,7 @@ h2{
    .sobremim{
     margin-top: 100px;
     font-size: 2em;
-    margin-bottom: -40px;
+   
    }
  
    .paragrafo:hover{
@@ -131,10 +133,11 @@ h2{
    }
  .caxa{
     background-color: var(--ecuro);
-    margin-top: 10px;
-    padding: 50px;
+    margin-top: 40px;
+    padding: 20px;
    display: flex;
    justify-content: center;
+   
   
    
 }
@@ -148,16 +151,18 @@ h2{
 #lisicon{
     list-style: none;
     display: inline-block;
-    margin: 20px;
+    margin: 10px;
     background-color: #68686818;
     backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
     
     
+    
 }
 #lisicon:hover{
     box-shadow: 0px 5px 10px #025373;
+    
 
 }
 
