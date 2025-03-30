@@ -28,21 +28,15 @@ body{
     padding: 20px;
     backdrop-filter: blur(10px);
 
-    
-    
-    
-    
 }
 a{
     text-decoration: none;
 }
 .fa-solid {
     color: #ffffff;
-    margin-right: 3em;
+    margin-right: 4em;
 }
-.fa-solid:hover{
-   
-}
+
 
 
 .menu:hover{
@@ -133,7 +127,7 @@ h2{
    }
  .caxa{
     background-color: var(--ecuro);
-    margin-top: 40px;
+    margin-top: -40px;
     padding: 20px;
    display: flex;
    justify-content: center;
