@@ -166,7 +166,7 @@ h2{
 
 }
 .caxavideo{
-   /* background-color: var(--medio);
+    background-color: var(--medio);
     border-radius: 50px;
     display: flex;
     margin-top: 200px;
@@ -178,7 +178,8 @@ h2{
 
 video{
     
-   /* max-width: 200px;
+    max-width: 300px;
+    height: 200px;
     border-radius:  50px 0px 0px 50px;
     
     
