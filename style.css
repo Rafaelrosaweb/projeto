@@ -165,14 +165,25 @@ h2{
     
 
 }
+.caxavideo{
+    background-color: var(--medio);
+    border: solid  #025E73 1px;
+    border-radius: 50px;
+    display: flex;
+    margin-top: 200px;
+    max-width: 700px;
+}
 
 
 
 video{
-    opacity: 8%;
-    max-width: 500px;
-    margin-top: 60px;
+    
+    max-width: 200px;
+    border-radius:  50px 0px 0px 50px  ;
+    
+    
 }
+
     
     
 
