@@ -39,10 +39,95 @@
   
    <main>
     
- 
+    
+    <div class="fundocolor">
+      <div class="container">
+        <h1>Agendador</h1>
+        <div class="h1caxa">
+          <h1>Preença o campo com seu Whatsapp.
+            E escolha uma data para o seu serviço, que em breve vamos entra em contato.
+          </h1>
+        </div>
+        <!-- Formulário para adicionar compromissos -->
+        <form id="agendaForm">
+            <input type="text" id="compromisso" placeholder="Whatsapp" required>
+            <input type="datetime-local" id="dataHora" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="agendaList"></ul>
+        </div>
+    </div>
     
   
     </main>
+    <script>
+      // Função para carregar compromissos do localStorage
+function carregarCompromissos() {
+    const compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+    const agendaList = document.getElementById('agendaList');
+    agendaList.innerHTML = '';
+
+    compromissos.forEach((compromisso, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${compromisso.texto} - ${compromisso.data}</span>
+            <button onclick="removerCompromisso(${index})">Remover</button>
+        `;
+        agendaList.appendChild(li);
+    });
+}
+
+// Função para adicionar compromisso
+function adicionarCompromisso(event) {
+    event.preventDefault();
+
+    const texto = document.getElementById('compromisso').value;
+    const dataHora = document.getElementById('dataHora').value;
+
+    if (!texto || !dataHora) return;
+
+    const compromisso = {
+        texto,
+        data: new Date(dataHora).toLocaleString(),
+    };
+
+    // Recupera compromissos do localStorage
+    const compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+
+    // Adiciona novo compromisso
+    compromissos.push(compromisso);
+
+    // Salva novamente no localStorage
+    localStorage.setItem('compromissos', JSON.stringify(compromissos));
+
+    // Limpa o formulário
+    document.getElementById('agendaForm').reset();
+
+    // Atualiza a lista de compromissos
+    carregarCompromissos();
+}
+
+// Função para remover compromisso
+function removerCompromisso(index) {
+    const compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+
+    // Remove compromisso pelo índice
+    compromissos.splice(index, 1);
+
+    // Atualiza o localStorage
+    localStorage.setItem('compromissos', JSON.stringify(compromissos));
+
+    // Atualiza a lista de compromissos
+    carregarCompromissos();
+}
+
+// Carregar compromissos ao iniciar a página
+document.addEventListener('DOMContentLoaded', carregarCompromissos);
+
+// Adicionar compromisso ao enviar o formulário
+document.getElementById('agendaForm').addEventListener('submit', adicionarCompromisso);
+
+    </script>
       
     
    

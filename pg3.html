@@ -36,45 +36,15 @@
         </ul>
       </nav>
      <main>
+      
+    
  
-  <div class="groud">
-    <div class="whatsapp-form">
-      <h2>Envie uma mensagem via WhatsApp</h2>
-      <form id="whatsappForm">
-        <input type="tel" id="phoneNumber" placeholder="Digite o número com DDD (ex: 11987654321)" required>
-        <textarea id="message" placeholder="Digite sua mensagem..." rows="4" required></textarea>
-        <button type="submit">Enviar Mensagem</button>
-      </form>
-    </div>
-  </div>
-
-
-    
-  </main>
+    </main>
+    <script>
+      
+    </script>
      
-     <script>
-      document.getElementById('whatsappForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Impede o envio do formulário
-
-  const phoneNumber = document.getElementById('phoneNumber').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  // Verifica se o número de telefone e a mensagem não estão vazios
-  if (phoneNumber && message) {
-    // Codifica a mensagem para garantir que caracteres especiais funcionem
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Cria a URL do WhatsApp
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-    // Abre a URL no WhatsApp
-    window.open(whatsappUrl, '_blank');
-  } else {
-    alert("Por favor, preencha todos os campos.");
-  }
-});
-
-     </script>
+ 
     
 </body>
 </html>
