@@ -123,7 +123,7 @@ h2{
    }
  
    .paragrafo:hover{
-   border: 1px solid #ffffff;
+   
    
     
 
@@ -166,8 +166,7 @@ h2{
 
 }
 .caxavideo{
-    background-color: var(--medio);
-    border: solid  #025E73 1px;
+   /* background-color: var(--medio);
     border-radius: 50px;
     display: flex;
     margin-top: 200px;
@@ -179,8 +178,9 @@ h2{
 
 video{
     
-    max-width: 200px;
-    border-radius:  50px 0px 0px 50px  ;
+   /* max-width: 200px;
+    border-radius:  50px 0px 0px 50px;
+    
     
     
 }
