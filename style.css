@@ -14,6 +14,7 @@
 }
 body{
     background-color:#011826;
+    
 
 }
 .menu{
@@ -166,27 +167,55 @@ h2{
 
 }
 
-    
-    
-
-    
-   
-    
-
-
-
-    
-
 
   
- 
+  .whatsapp-form {
+    background-color: #012840;
     
+    margin-top: 200px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  .groud{
     
- 
-
- 
-   
-
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #025E73;
+    margin-bottom: 20px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color:#025E73;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #128c7e;
+  }
+  
  
  
  
