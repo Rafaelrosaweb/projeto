@@ -218,6 +218,7 @@ h1 {
 }
 
 form {
+    margin: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -226,6 +227,7 @@ form {
 }
 
 input {
+    
     padding: 10px;
     font-size: 14px;
     border-radius: 4px;
