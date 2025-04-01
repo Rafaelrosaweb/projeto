@@ -37,98 +37,98 @@
       </nav>
     </nav>
     
-    <div class="imgcaxa"><img class="imgfundo" src="imagens/undraw_events_0w4f.svg" alt=""></div>
+    
    <main>
     
+    <div class="container">
+      <h1>Agendador de Compromissos</h1>
+      
+      <form id="form-agenda">
+          <input type="text" id="nome" placeholder="Nome" required>
+          <input type="datetime-local" id="data-hora" required>
+          <button type="submit">Agendar</button>
+      </form>
+      
+      <h2>Meus Agendamentos</h2>
+      <ul id="lista-agendamentos"></ul>
+  </div>
+
+  <script src="script.js"></script>
+   
     
-    <div class="fundocolor">
-      <div class="container">
-        <h1>Agendador</h1>
-        <div class="h1caxa">
-          <h1>Preença o campo com seu Whatsapp,
-            e escolha uma data para o seu serviço, em breve entraremos em contato.
-          </h1>
-        </div>
-        <!-- Formulário para adicionar compromissos -->
-        <form id="agendaForm">
-            <input type="text" id="compromisso" placeholder="Whatsapp" required>
-            <input type="datetime-local" id="dataHora" required>
-            <button type="submit">Adicionar</button>
-        </form>
-        <ul id="agendaList"></ul>
-        </div>
-    </div>
     
   
     </main>
     <script>
-      // Função para carregar compromissos do localStorage
-function carregarCompromissos() {
-    const compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
-    const agendaList = document.getElementById('agendaList');
-    agendaList.innerHTML = '';
+     document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-agenda");
+    const listaAgendamentos = document.getElementById("lista-agendamentos");
+    const nomeInput = document.getElementById("nome");
+    const dataHoraInput = document.getElementById("data-hora");
 
-    compromissos.forEach((compromisso, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            <span>${compromisso.texto} - ${compromisso.data}</span>
-            <button onclick="removerCompromisso(${index})">Remover</button>
-        `;
-        agendaList.appendChild(li);
+    // Função para carregar agendamentos do localStorage
+    function carregarAgendamentos() {
+        const agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
+        listaAgendamentos.innerHTML = "";
+        agendamentos.forEach((agendamento, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${agendamento.nome} - ${agendamento.dataHora}</span>
+                <button onclick="removerAgendamento(${index})">Remover</button>
+            `;
+            listaAgendamentos.appendChild(li);
+        });
+    }
+
+    // Função para adicionar um agendamento
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        
+        const nome = nomeInput.value;
+        const dataHora = dataHoraInput.value;
+
+        if (nome && dataHora) {
+            const agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
+            agendamentos.push({ nome, dataHora });
+            localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
+
+            nomeInput.value = "";
+            dataHoraInput.value = "";
+
+            carregarAgendamentos();
+            enviarNotificacaoWhatsApp(nome, dataHora);
+        }
     });
-}
 
-// Função para adicionar compromisso
-function adicionarCompromisso(event) {
-    event.preventDefault();
-
-    const texto = document.getElementById('compromisso').value;
-    const dataHora = document.getElementById('dataHora').value;
-
-    if (!texto || !dataHora) return;
-
-    const compromisso = {
-        texto,
-        data: new Date(dataHora).toLocaleString(),
+    // Função para remover agendamento
+    window.removerAgendamento = (index) => {
+        const agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
+        agendamentos.splice(index, 1);
+        localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
+        carregarAgendamentos();
     };
 
-    // Recupera compromissos do localStorage
-    const compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+    // Função de envio de notificação via WhatsApp (Mock)
+    function enviarNotificacaoWhatsApp(nome, dataHora) {
+        const numeroWhatsApp = "5511999999999"; // Substitua pelo seu número de WhatsApp
+        const mensagem = `Você tem um compromisso agendado com ${nome} para o dia ${dataHora}.`;
 
-    // Adiciona novo compromisso
-    compromissos.push(compromisso);
+        // Usando a API do Twilio para WhatsApp (ou outro serviço)
+        // A URL ficaria assim:
+        // const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
+        // window.open(url, "_blank");
 
-    // Salva novamente no localStorage
-    localStorage.setItem('compromissos', JSON.stringify(compromissos));
+        // Simulação de envio de mensagem
+        console.log(`Notificação enviada para o WhatsApp: ${mensagem}`);
+    }
 
-    // Limpa o formulário
-    document.getElementById('agendaForm').reset();
-
-    // Atualiza a lista de compromissos
-    carregarCompromissos();
-}
-
-// Função para remover compromisso
-function removerCompromisso(index) {
-    const compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
-
-    // Remove compromisso pelo índice
-    compromissos.splice(index, 1);
-
-    // Atualiza o localStorage
-    localStorage.setItem('compromissos', JSON.stringify(compromissos));
-
-    // Atualiza a lista de compromissos
-    carregarCompromissos();
-}
-
-// Carregar compromissos ao iniciar a página
-document.addEventListener('DOMContentLoaded', carregarCompromissos);
-
-// Adicionar compromisso ao enviar o formulário
-document.getElementById('agendaForm').addEventListener('submit', adicionarCompromisso);
+    // Carregar agendamentos ao carregar a página
+    carregarAgendamentos();
+});
 
     </script>
+   
+   
       
     
    
