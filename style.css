@@ -175,12 +175,16 @@ h2{
 
 }
 .imgfundo{
-  max-width: 250px;
+    
+  max-width: 200px;
    display: flex;
    margin: auto;
    margin-top: 110px;
 }
 .imgcaxa{
+    max-width: 250px;
+    justify-content: center;
+    display: inline;
    
 }
 
