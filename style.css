@@ -195,7 +195,6 @@ h2{
 .container {
     
     max-width: 350px;
-    height: 600px;
     margin: auto;
     padding: 20px;
     background-color: #0128403d;
@@ -221,7 +220,7 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
     margin-bottom: 50px;
     
 }
