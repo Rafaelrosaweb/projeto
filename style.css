@@ -194,7 +194,7 @@ h2{
 
 .container {
     
-    max-width: 250px;
+    max-width: 400px;
     margin: auto;
     padding: 20px;
     background-color: #0128403d;
@@ -249,6 +249,7 @@ button:hover {
 ul {
     list-style-type: none;
     padding: 0;
+    color: white;
 }
 
 /*li {
