@@ -41,90 +41,32 @@
    <main>
     
     <div class="container">
-      <h1>Agendador de Compromissos</h1>
-      
-      <form id="form-agenda">
-          <input type="text" id="nome" placeholder="Nome" required>
-          <input type="datetime-local" id="data-hora" required>
-          <button type="submit">Agendar</button>
+      <h1>Agendador Online</h1>
+      <form id="agendamentoForm">
+          <label for="evento">Evento:</label>
+          <input type="text" id="evento" required>
+          
+          <label for="data">Data:</label>
+          <input type="date" id="data" required>
+          
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" required>
+          
+          <button type="submit">Adicionar Agendamento</button>
       </form>
-      
+
       <h2>Meus Agendamentos</h2>
-      <ul id="lista-agendamentos"></ul>
+      <ul id="listaAgendamentos"></ul>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script
    
     
     
   
     </main>
     <script>
-     document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("form-agenda");
-    const listaAgendamentos = document.getElementById("lista-agendamentos");
-    const nomeInput = document.getElementById("nome");
-    const dataHoraInput = document.getElementById("data-hora");
-
-    // Função para carregar agendamentos do localStorage
-    function carregarAgendamentos() {
-        const agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
-        listaAgendamentos.innerHTML = "";
-        agendamentos.forEach((agendamento, index) => {
-            const li = document.createElement("li");
-            li.innerHTML = `
-                <span>${agendamento.nome} - ${agendamento.dataHora}</span>
-                <button onclick="removerAgendamento(${index})">Remover</button>
-            `;
-            listaAgendamentos.appendChild(li);
-        });
-    }
-
-    // Função para adicionar um agendamento
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        
-        const nome = nomeInput.value;
-        const dataHora = dataHoraInput.value;
-
-        if (nome && dataHora) {
-            const agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
-            agendamentos.push({ nome, dataHora });
-            localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
-
-            nomeInput.value = "";
-            dataHoraInput.value = "";
-
-            carregarAgendamentos();
-            enviarNotificacaoWhatsApp(nome, dataHora);
-        }
-    });
-
-    // Função para remover agendamento
-    window.removerAgendamento = (index) => {
-        const agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
-        agendamentos.splice(index, 1);
-        localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
-        carregarAgendamentos();
-    };
-
-    // Função de envio de notificação via WhatsApp (Mock)
-    function enviarNotificacaoWhatsApp(nome, dataHora) {
-        const numeroWhatsApp = "5511999999999"; // Substitua pelo seu número de WhatsApp
-        const mensagem = `Você tem um compromisso agendado com ${nome} para o dia ${dataHora}.`;
-
-        // Usando a API do Twilio para WhatsApp (ou outro serviço)
-        // A URL ficaria assim:
-        // const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
-        // window.open(url, "_blank");
-
-        // Simulação de envio de mensagem
-        console.log(`Notificação enviada para o WhatsApp: ${mensagem}`);
-    }
-
-    // Carregar agendamentos ao carregar a página
-    carregarAgendamentos();
-});
+    
 
     </script>
    
