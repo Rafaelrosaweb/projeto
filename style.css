@@ -11,7 +11,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+   
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
@@ -196,7 +196,7 @@ h2{
 
 /* Título principal */
 h1 {
-    font-size: 24px;
+    font-size: 35px;
     color: #ffffff;
     margin-bottom: 20px;
 }
@@ -208,6 +208,7 @@ form {
     gap: 10px;
     margin-bottom: 30px;
     color: white;
+   
 }
 
 /* Estilo para os inputs do formulário */
@@ -217,7 +218,7 @@ input[type="datetime-local"] {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 100%;
+    width: 94%;
 }
 
 /* Estilo para o botão de submit */
@@ -257,11 +258,11 @@ ul {
 @media (max-width: 768px) {
     .container {
         padding: 15px;
-        width: 90%;
+        width: 100%;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 35px;
     }
 
     h2 {
@@ -278,7 +279,7 @@ ul {
 }
 /* Estilo para a mensagem de agradecimento */
 .mensagem-agradecimento {
-    background-color: #4CAF50; /* Cor verde, típica de sucesso */
+    background-color: #0128403d; /* Cor verde, típica de sucesso */
     color: white;
     font-size: 18px;
     padding: 15px;
@@ -295,6 +296,7 @@ ul {
     opacity: 1;
     transition: opacity 0.5s ease; /* Transição suave para desaparecimento */
     font-weight: bold;
+    box-shadow: 0px 5px 10px #025373;
 }
 
 /* Estilo para o desaparecimento suave da mensagem após o tempo */
@@ -306,7 +308,7 @@ ul {
 
 
 .mensagem-agradecimento {
-    animation: fadeIn 0.5s ease-out; /* Animação de entrada suave */
+    animation: fadeIn 0.10s ease-out; /* Animação de entrada suave */
 }
 
 /* Opcional: Estilo para mensagens de erro (caso queira personalizar no futuro) */
@@ -336,15 +338,19 @@ ul {
 li{
     color: #ffffff;
     
+    
    
 }
 .btn-excluir{
     margin-left: 20px;
-    color: ;
+    
 }
 #telefone{
-    height: 45px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    width: 94%;
     
 }
 
