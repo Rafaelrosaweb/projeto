@@ -5,15 +5,18 @@
     --medio: #012840;
     --claro: #025373;
     --claro2:#025E73;
+    
 }
 
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
     background-color:#011826;
+    button
     
 
 }
@@ -50,7 +53,7 @@ a{
 
 
 .foto{
-    
+
     background-color: #025E73;
     width: 270px;
     height: 270px;
@@ -59,23 +62,11 @@ a{
     border-radius:  50% ;
     background-image: url(imagens/minha\ imagem.jpg);
     background-position:  center;
-    
-    
-   
-    
-    
-   
-    
-    
-    
-    
-}
-.foto:hover{
     box-shadow: 0px 1px 30px #025373;
-    
-    
-    
+
 }
+
+
 
 
 
@@ -175,3 +166,64 @@ h2{
 
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.events {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -19,27 +19,42 @@
             </a>
            
            
-            <a >
+          
+             <a >
+               <li class="lista">
+                  <a href="pg2.html"><i class=><i class="fa-solid fa-message"></i></i></a>
+               </li>
+             </a>
+
+
+             <a >
               <li class="lista">
-                  <a href="pg2.html"><i class="fa-solid fa-calendar"></i></i></a>
+                  <a href="pg3.html"><i class="fa-solid fa-calendar"></i></i></a>
               </li>
             </a>
             
-             
-             <a >
-               <li class="lista">
-                  <a href=""><i class=><i class="fa-solid fa-message"></i></i></a>
-               </li>
-             </a>
              
              
         </ul>
       </nav>
      <main>
+      <div class="container">
+        <h1>Agendador Online</h1>
+        <div class="form-container">
+            <input type="text" id="eventName" placeholder="Nome do Evento" required>
+            <input type="datetime-local" id="eventDate" required>
+            <button onclick="saveEvent()">Salvar Evento</button>
+        </div>
+        <div class="events">
+            <h2>Eventos Agendados</h2>
+            <ul id="eventList"></ul>
+        </div>
+    </div>
       
     
  
     </main>
+    
     <script>
       
     </script>
