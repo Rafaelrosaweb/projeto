@@ -38,19 +38,21 @@
         </ul>
       </nav>
      <main>
-      <div class="container">
-        <h1>Agendador Online</h1>
-        <div class="form-container">
-            <input type="text" id="eventName" placeholder="Nome do Evento" required>
-            <input type="datetime-local" id="eventDate" required>
-            <button onclick="saveEvent()">Salvar Evento</button>
-        </div>
-        <div class="events">
-            <h2>Eventos Agendados</h2>
-            <ul id="eventList"></ul>
-        </div>
-    </div>
-      
+      <div class="caixaconntainer">
+        <div class="container">
+          <h1>Agendador de Tarefas</h1>
+          <form id="form-agenda">
+              <label for="tarefa">Tarefa</label>
+              <input type="text" id="tarefa" required>
+              <label for="data">Data e Hora</label>
+              <input type="datetime-local" id="data" required>
+              <button type="submit">Agendar</button>
+          </form>
+          <h2>Meus Agendamentos</h2>
+          <ul id="agenda-list"></ul>
+            </div>
+        
+      </div>
     
  
     </main>

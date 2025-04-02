@@ -16,7 +16,8 @@
 }
 body{
     background-color:#011826;
-    button
+    
+    
     
 
 }
@@ -34,9 +35,14 @@ body{
     backdrop-filter: blur(10px);
 
 }
+
+
 a{
     text-decoration: none;
 }
+
+
+
 .fa-solid {
     color: #ffffff;
     margin-right: 4em;
@@ -166,64 +172,113 @@ h2{
 
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+
+
+
+
+/* Container principal do agendador */
+.container {
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    text-align: center;
+}
+.caixaconntainer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    margin-top: 200px;
 }
 
+/* Título principal */
 h1 {
-    text-align: center;
-    color: #4CAF50;
+    font-size: 24px;
+    color: #4A90E2;
+    margin-bottom: 20px;
 }
 
-.form-container {
+/* Estilo do formulário */
+form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-input, button {
-    margin: 10px 0;
+/* Estilo para os inputs do formulário */
+input[type="text"],
+input[type="datetime-local"] {
     padding: 10px;
+    font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
+    width: 100%;
 }
 
+/* Estilo para o botão de submit */
 button {
-    background-color: #4CAF50;
+    background-color: #4A90E2;
     color: white;
+    font-size: 16px;
     border: none;
+    padding: 12px 20px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #357ABD;
 }
 
-.events {
-    margin-top: 20px;
+/* Título para a lista de agendamentos */
+h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
 }
 
+/* Estilo para a lista de agendamentos */
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-li {
-    margin-bottom: 10px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
+
+
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+   
+    
 }
+
+    
+    
+    
+    
+
+
+
