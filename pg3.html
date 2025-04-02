@@ -58,7 +58,81 @@
     </main>
     
     <script>
-      
+      document.getElementById("form-agenda").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const tarefa = document.getElementById("tarefa").value;
+    const data = document.getElementById("data").value;
+
+    const novoAgendamento = {
+        tarefa: tarefa,
+        data: data,
+    };
+
+    // Salvar no LocalStorage
+    let agenda = JSON.parse(localStorage.getItem("agenda")) || [];
+    agenda.push(novoAgendamento);
+    localStorage.setItem("agenda", JSON.stringify(agenda));
+
+    // Atualizar a lista de agendamentos
+    atualizarAgenda();
+
+    // Exibir mensagem de agradecimento
+    exibirMensagem("Agendamento realizado com sucesso! Obrigado!");
+
+    // Limpar os campos do formulário
+    document.getElementById("tarefa").value = '';
+    document.getElementById("data").value = '';
+});
+
+function atualizarAgenda() {
+    const agenda = JSON.parse(localStorage.getItem("agenda")) || [];
+    const lista = document.getElementById("agenda-list");
+    lista.innerHTML = "";
+
+    agenda.forEach((agendamento, index) => {
+        const item = document.createElement("li");
+        item.textContent = `${agendamento.tarefa} - ${new Date(agendamento.data).toLocaleString()}`;
+        
+        // Botão de exclusão
+        const btnExcluir = document.createElement("button");
+        btnExcluir.textContent = "Excluir";
+        btnExcluir.classList.add("btn-excluir");
+        btnExcluir.addEventListener("click", () => {
+            excluirAgendamento(index);
+            exibirMensagem("Agendamento excluído com sucesso!");
+        });
+
+        item.appendChild(btnExcluir);
+        lista.appendChild(item);
+    });
+}
+
+// Função para excluir o agendamento
+function excluirAgendamento(index) {
+    let agenda = JSON.parse(localStorage.getItem("agenda")) || [];
+    agenda.splice(index, 1); // Remove o item da lista
+    localStorage.setItem("agenda", JSON.stringify(agenda)); // Atualiza o armazenamento
+    atualizarAgenda(); // Atualiza a visualização
+}
+
+// Função para exibir a mensagem de agradecimento
+function exibirMensagem(mensagem) {
+    const mensagemDiv = document.createElement("div");
+    mensagemDiv.classList.add("mensagem-agradecimento");
+    mensagemDiv.textContent = mensagem;
+
+    document.body.appendChild(mensagemDiv);
+
+    // Após 3 segundos, a mensagem desaparece
+    setTimeout(() => {
+        mensagemDiv.remove();
+    }, 3000);
+}
+
+// Atualizar a lista ao carregar a página
+document.addEventListener("DOMContentLoaded", atualizarAgenda);
+
     </script>
      
  

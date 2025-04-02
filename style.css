@@ -274,6 +274,63 @@ ul {
    
     
 }
+/* Estilo para a mensagem de agradecimento */
+.mensagem-agradecimento {
+    background-color: #4CAF50; /* Cor verde, típica de sucesso */
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    position: fixed;
+    top: 100px; /* Posiciona no topo da página */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    width: 80%;
+    max-width: 400px; /* Limita a largura máxima */
+    z-index: 1000; /* Garante que fique sobre outros elementos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar */
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transição suave para desaparecimento */
+    font-weight: bold;
+}
+
+/* Estilo para o desaparecimento suave da mensagem após o tempo */
+.mensagem-agradecimento.fade-out {
+    opacity: 0; /* Torna a mensagem invisível */
+}
+
+/* Efeito de fade-in e fade-out ao mostrar a mensagem */
+
+
+.mensagem-agradecimento {
+    animation: fadeIn 0.5s ease-out; /* Animação de entrada suave */
+}
+
+/* Opcional: Estilo para mensagens de erro (caso queira personalizar no futuro) */
+.mensagem-erro {
+    background-color: #E74C3C; /* Vermelho, para mensagens de erro */
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Opcional: Estilo para mensagens de erro com desaparecimento */
+.mensagem-erro.fade-out {
+    opacity: 0;
+}
 
     
     
