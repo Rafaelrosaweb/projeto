@@ -178,7 +178,8 @@ h2{
 
 /* Container principal do agendador */
 .container {
-    background-color:  #0128403d;
+    backdrop-filter: blur(10px);
+    background-color: #0128403d;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 20px;
@@ -191,7 +192,7 @@ h2{
 .caixaconntainer{
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+   
 }
 
 /* Título principal */
@@ -352,6 +353,21 @@ li{
     border-radius: 4px;
     width: 94%;
     
+}
+.caxaanimação{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: -15px;
+    
+    
+}
+.animação{
+    width: 200px;
+    
+   
+   
 }
 
     
